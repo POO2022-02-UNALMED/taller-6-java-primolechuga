@@ -5,9 +5,13 @@ import java.util.ArrayList;
 public class Pais{
     private static ArrayList<Pais> listaPais= new ArrayList<Pais>();
     private String nombre;
-    private int cantiadPorPais;
+    public int cantiadPorPais;
     public Pais(String nombre){
         this.nombre=nombre;
+        agregarPais(this);
+    }
+    public static void agregarPais(Pais pais){
+        listaPais.add(pais);
     }
     public String getNombre() {
         return nombre;
@@ -22,13 +26,14 @@ public class Pais{
         this.cantiadPorPais = cantiadPorPais;
     }
     public static Pais paisMasVendedor(){
-        int mayor;
-        Pais masFabricante;
-        for(int i=0;i<listaPais.size();i++);
-         int j= listaPais.get(i).getCantiadPorPais;
-        if(j>mayor){
+        int mayor=0;
+        Pais masFabricante=null;
+        for(int i=0;i<listaPais.size();i++){;
+            int j= listaPais.get(i).getCantiadPorPais();
+            if(j>mayor){
             mayor=j;
             masFabricante=listaPais.get(i);
+        }
         }
         return masFabricante;
     }

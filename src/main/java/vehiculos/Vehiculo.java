@@ -22,6 +22,7 @@ public class Vehiculo{
         this.fabricante=fabricante;
         CantidadVehiculos++;
         fabricante.cantPorfabricante++;
+        fabricante.getPais().cantiadPorPais++;
     }
     public static String vehiculosPorTipo(){
         int x=Automovil.getCantidadAutomoviles();
